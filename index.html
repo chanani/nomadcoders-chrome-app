@@ -7,31 +7,49 @@
   <title>Momentum</title>
 </head>
 <body>
-  <form id="login-form" class="hidden">
-    <input 
-        required 
-        maxlength="15"
-        type="text"
-        placeholder="이름이 무엇인가요?"/>
-    <input type="submit" value="Log In">
-  </form>
-  
-  <h2 id="clock">00:00:00</h2>
-  <h1 id="greeting" class="hidden"></h1>
+  <header id="header">
+    <button class="header-toggle" type="button">Search</button>
+    <div >
+      <form action="">
+        <input type="search">
+        <button type="submit" value="검색"></button>
+      </form>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
-  <form id="todo-form">
-    <input type="text" placeholder="오늘의 할일을 입력하고 Enter를 누르세요.">
-  </form>
+  <section class="container-top">
+    <h2 id="clock">00:00:00</h2>
 
-  <ul id="todo-list">
+    <form id="login-form" class="hidden">
+      <input 
+          required 
+          maxlength="15"
+          type="text"
+          placeholder="Please write your name"/>
+      <input type="submit" value="Log In">
+    </form>
     
-  </ul>
+    <h1 id="greeting" class="hidden"></h1>
+  </section>
 
-  <div id="quote">
-    <span></span>
-    <span></span>
-  </div>
+  <footer class="footer">
+    <form id="todo-form">
+      <input type="text" placeholder="오늘의 할일을 입력하고 Enter를 누르세요.">
+    </form>
 
+    <ul id="todo-list">
+    </ul>
+
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+  </footer>
+  
 
 
 
@@ -40,5 +58,6 @@
   <script src="js/quotes.js"></script>
   <script src="js/background.js"></script>
   <script src="js/todo.js"></script>
+  <script src="js/weather.js"></script>
 </body>
 </html>
