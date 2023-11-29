@@ -2,7 +2,6 @@
   display: none;
 }
 * {
-  margin: 0;
 }
 body{
   color: white;
@@ -14,7 +13,7 @@ html {
 
 
 .container-top {
-  height: 88vh;
+  height: 87vh;
   display: flex;
   flex-direction: column; /* 기본 값은 row */
   flex-wrap: nowrap;
@@ -46,7 +45,6 @@ h2, h1 {
 
 #header {
   overflow: hidden;
-  height: 6vh;
 }
 
 .search-toggle {
@@ -97,14 +95,15 @@ h2, h1 {
   height: 50px;
   color: white;
   position: absolute;
-  top: -7px;
-  right: 40px;
+  top: -9px;
+  right: 46px;
 }
 
 #weather span {
   float :right
 }
 
+.first-span {margin-bottom: 5px;}
 .footer {
   display: flex;
   height: 6vh;
@@ -146,6 +145,14 @@ h2, h1 {
 
 #greeting {font-size: 3.7vw;}
 
+@media (max-width: 380px) {
+  #quote {
+    display: none;
+  }
+ 
+  
+}
+
 @media (min-width: 380px) {
   #quote {
     font-size: 0.8rem;
@@ -157,7 +164,23 @@ h2, h1 {
     height: 1.2rem;
     font-size: 11px;
   }
+  .container-top{
+    height: 80vh;
+  }
+  #header {
+    height: 10vh;
+  }
+  #search-form {
+    width: 180px;
+  }
+
+  .search-input {
+    width: 155px;
+  }
   
+  .search-btn{
+    padding: 0;
+  }
   
 }
 
@@ -169,6 +192,12 @@ h2, h1 {
     width: 22vw;
     height: 3rem;
     font-size: 30px;
+  }
+  .container-top{
+    height: 87vh;
+  }
+  #header {
+    height: 6vh;
   }
 }
 
@@ -217,4 +246,11 @@ h2, h1 {
   color: white;
   border: none;
   float:right;
+}
+
+.makeText {
+  margin: 0 auto;
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: 20px;
 }

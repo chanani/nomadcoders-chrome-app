@@ -33,8 +33,12 @@ if(saveUsername === null){
 }
 
 logoutBtn.addEventListener("click", function(){
-  localStorage.removeItem(USERNAME_KEY);
-  localStorage.removeItem(TODOS_KEY);
-  alert("로그아웃 되었습니다.");
-  location.reload();
+  if(localStorage.getItem("username") !== null){
+    localStorage.removeItem(USERNAME_KEY);
+    localStorage.removeItem(TODOS_KEY);
+    alert("로그아웃 되었습니다.");
+    location.reload();
+  } else {
+    alert("로그인 후 로그아웃을 할 수 있습니다.");
+  }
 });

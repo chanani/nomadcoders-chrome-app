@@ -2,6 +2,7 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const todoBox = document.querySelector(".todo-box");
+const makeText = document.querySelector(".makeText");
 
 const TODOS_KEY = "todos";
 
@@ -9,6 +10,9 @@ let toDos = [];
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+  if(localStorage.getItem(TODOS_KEY) === "[]"){
+    makeText.classList.remove("hidden");
+  }
 }
 
 function deleteTodo(event) {
@@ -95,28 +99,37 @@ function paintToDo(newTodo) {
 
 
 function handleTodoSubmit(event) {
-  event.preventDefault();
-  const newTodo = toDoInput.value;
-  toDoInput.value = "";
-  const newTodoObj = {
-    text: newTodo,
-    id: Date.now(),
-    checked: false, // 기본값으로 checked를 추가하고 false로 설정
-  };
-  toDos.push(newTodoObj);
-  paintToDo(newTodoObj);
-  saveToDos();
+  if(localStorage.getItem("username") !== null){
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    const newTodoObj = {
+      text: newTodo,
+      id: Date.now(),
+      checked: false, // 기본값으로 checked를 추가하고 false로 설정
+    };
+    makeText.classList.add("hidden");
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
+    saveToDos();
+  } else{
+    alert("이름을 먼저 입력해주세요.");
+  }
 }
 
 toDoForm.addEventListener("submit", handleTodoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (savedToDos !== null) {
+if (savedToDos !== null && savedToDos !== "[]") {
+  makeText.classList.add("hidden");
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
+} else if(savedToDos === null || savedToDos === "[]"){
+  makeText.classList.remove("hidden");
 }
+
 
 const todoBtn = document.querySelector("#todo-btn");
 todoBtn.addEventListener("click", function () {
