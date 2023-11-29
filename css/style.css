@@ -1,4 +1,220 @@
 .hidden {
   display: none;
 }
+* {
+  margin: 0;
+}
+body{
+  color: white;
+  position: relative;
+}
+html {
+  height: 100vh;
+}
 
+
+.container-top {
+  height: 88vh;
+  display: flex;
+  flex-direction: column; /* 기본 값은 row */
+  flex-wrap: nowrap;
+  justify-content: center; /* 어떻게 배치할지 */
+  align-items: center; /* 수직축 배치 */
+
+}
+#name-title {
+  font-size: 3vw;
+}
+h2, h1 {
+  margin: 0;
+}
+#clock {
+  width: auto;
+  height: auto;
+  font-size: 12vw;
+}
+
+#login-form .login-input {
+  
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white; 
+}
+
+#header {
+  overflow: hidden;
+  height: 6vh;
+}
+
+.search-toggle {
+  float: left;
+  background-color: transparent;
+  color: white;
+  height:40px;
+  font-size: 17px;
+  border: none;
+}
+.search-box{
+  float: left;
+  border-bottom: 2px solid white;
+  height: 34px;
+}
+
+.search-input {
+  height: 42px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.bi-search {
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+.search-btn {
+  background-color: transparent;
+  border: none;
+}
+
+
+
+
+#weather {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 15px 0 0;
+}
+
+#weather img {
+  height: 50px;
+  color: white;
+  position: absolute;
+  top: -7px;
+  right: 40px;
+}
+
+#weather span {
+  float :right
+}
+
+.footer {
+  display: flex;
+  height: 6vh;
+  flex-direction : row;
+  flex-wrap : wrap;
+  justify-content: space-between;
+}
+
+
+
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+}
+.login-btn:hover {
+
+  
+}
+.bi-box-arrow-right {
+  font-size: 30px;
+  color: white;
+}
+
+#todo-btn {
+  width: 42px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 1px 0;
+  margin-right: 5px;
+}
+
+#quote{
+  text-align: center;
+  line-height: 2.7vh;
+}
+
+#greeting {font-size: 3.7vw;}
+
+@media (min-width: 380px) {
+  #quote {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    font-weight: 40;
+  }
+  #login-form, .login-input {
+    width: 27vw;
+    height: 1.2rem;
+    font-size: 11px;
+  }
+  
+  
+}
+
+@media (min-width: 1024px) {
+  #quote {
+    font-size : 1rem;
+  }
+  #login-form, .login-input {
+    width: 22vw;
+    height: 3rem;
+    font-size: 30px;
+  }
+}
+
+.todo-box{
+  border: 1px solid #2b2a2a;
+  width: 300px;
+  /* min-height: 200px; */
+  position: absolute;
+  bottom: 60px;
+  right: 5px;
+  border-radius: 15px;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.todo-box-title{
+  padding: 15px;
+}
+
+.todo-box-title h1 {
+  font-size: 25px;
+}
+
+#todo-form input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 15px;
+  outline: none;
+  width: 200px;
+}
+
+#todo-list {
+  padding: 10px 15px 0 15px;
+}
+#todo-list > li {
+  list-style: none;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+
+#todo-list > li span {
+  margin: 0 5px;
+}
+
+#todo-list > li button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  float:right;
+}

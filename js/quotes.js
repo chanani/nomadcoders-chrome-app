@@ -1,9 +1,5 @@
 const quotes = [
   {
-    quote : "성공은 꿈꾸고, 믿고, 대담해지고, 실천하는데서 오는 것이다.",
-    author : "존 디줄리어스 3세",
-  },
-  {
     quote : "준비하지 않은 자는 기회가 와도 소용없다.",
     author : "알렉시스 드 토크빌",
   },
@@ -24,10 +20,6 @@ const quotes = [
     author : "샤론 드골",
   },
   {
-    quote : "삶은 당신이 만드는 것이다. 이전에도 그랬고 앞으로도 그럴 것이다.",
-    author : "그랜마 모세",
-  },
-  {
     quote : "꿈이 없다면 아무 일도 일어나지 않는다.",
     author : "칼 샌드버그",
   },
@@ -46,5 +38,5 @@ const author = document.querySelector("#quote span:last-child");
 
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = `"${todaysQuote.quote}" - `;
+quote.innerText = `"${todaysQuote.quote}"`;
 author.innerText = todaysQuote.author;

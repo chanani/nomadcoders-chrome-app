@@ -1,6 +1,8 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
+const logoutBtn = document.querySelector(".logout-btn");
+const nameTitle = document.querySelector("#name-title");
 
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "username";
@@ -15,8 +17,9 @@ function onLoginSubmit(event){
 
 function paintGreeting(){
   const username = localStorage.getItem(USERNAME_KEY);
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Welcome ${username} 🥰`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  nameTitle.classList.add("hidden");
 }
 
 const saveUsername = localStorage.getItem(USERNAME_KEY);
@@ -28,3 +31,10 @@ if(saveUsername === null){
 } else {
   paintGreeting();
 }
+
+logoutBtn.addEventListener("click", function(){
+  localStorage.removeItem(USERNAME_KEY);
+  localStorage.removeItem(TODOS_KEY);
+  alert("로그아웃 되었습니다.");
+  location.reload();
+});

@@ -10,9 +10,13 @@ function onGeoOk(position){
   .then(response => response.json())
   .then(data => {
     const weather = document.querySelector("#weather span:first-child");
+    const weatherIcon = document.querySelector("#weather img");
     const city = document.querySelector("#weather span:last-child");
     city.innerText = data.name;
-    weather.innerText = `${data.weather[0].main} / ${data.main.temp}도`;
+    let hear = Math.ceil(data.main.temp);
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    weather.innerText = ` / ${hear}°C`;
+    console.log(data);
   });
 };
 

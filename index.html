@@ -3,53 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Momentum</title>
 </head>
+<!--   div.container>div.item.item${$}*10      -->
 <body>
   <header id="header">
-    <button class="header-toggle" type="button">Search</button>
-    <div >
-      <form action="">
-        <input type="search">
-        <button type="submit" value="검색"></button>
+    <button class="search-toggle" type="button">Search</button>
+    <div class="search-box hidden">
+      <form id="search-form">
+        <input type="search" class="search-input" placeholder="Searching to Google">
+        <button type="submit" class="search-btn"><i class="bi bi-search"></i></button>
       </form>
     </div>
     <div id="weather">
       <span></span>
+      <img src="" alt="">
+      <br/>
       <span></span>
     </div>
   </header>
 
   <section class="container-top">
     <h2 id="clock">00:00:00</h2>
-
+    <h2 id="name-title">Please write your name</h2>
     <form id="login-form" class="hidden">
       <input 
           required 
           maxlength="15"
           type="text"
-          placeholder="Please write your name"/>
-      <input type="submit" value="Log In">
+          class="login-input"/>
     </form>
     
     <h1 id="greeting" class="hidden"></h1>
   </section>
 
+  <section class="container-middle">
+   
+  </section>
+
+
   <footer class="footer">
-    <form id="todo-form">
-      <input type="text" placeholder="오늘의 할일을 입력하고 Enter를 누르세요.">
-    </form>
 
-    <ul id="todo-list">
-    </ul>
-
+    <button class="logout-btn" type="button"><i class="bi bi-box-arrow-right"></i></button>
+    
     <div id="quote">
       <span></span>
+      <br/>
       <span></span>
     </div>
+
+   
+    <button type="button" id="todo-btn">Todo</button>
+   
+
   </footer>
-  
+
+  <div class="todo-box hidden" >
+    <div class="todo-box-title">
+      <h1>ToDoList</h1>
+    </div>
+    
+    <ul id="todo-list" class="hidden">
+    </ul>
+
+    <form id="todo-form" class="hidden">
+      <input type="text" placeholder="Write Your List">
+    </form>
+  </div>
 
 
 
@@ -59,5 +81,6 @@
   <script src="js/background.js"></script>
   <script src="js/todo.js"></script>
   <script src="js/weather.js"></script>
+  <script src="js/search.js"></script>
 </body>
 </html>
