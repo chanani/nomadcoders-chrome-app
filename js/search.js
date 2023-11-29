@@ -6,6 +6,15 @@ const searchBtn = document.querySelector(".search-btn");
 
 searchToggle.addEventListener("click", function(){
   searchBox.classList.toggle("hidden");
+
+  // 슬라이딩 애니메이션을 트리거하기 위해 추가된 코드
+  if (!searchBox.classList.contains("hidden")) {
+    searchBox.style.transform = "translateX(0%)";
+  } else {
+    searchBox.style.transform = "translateX(-100%)";
+  }
+
+  
 });
 
 searchBtn.addEventListener("click", function(event){

@@ -1,8 +1,25 @@
 .hidden {
-  display: none;
+  visibility: hidden;
+  
 }
-* {
+
+.search-box {
+  /* 초기 위치를 왼쪽 화면 밖으로 설정합니다. */
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
 }
+
+.todo-box {
+  /* 초기 위치를 오른쪽 화면 밖으로 설정합니다. */
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.todo-box:not(.hidden) {
+  transform: translateX(0%);
+}
+
+
 body{
   color: white;
   position: relative;
@@ -11,6 +28,10 @@ html {
   height: 100vh;
 }
 
+img {
+  height: 100%;
+  width: auto;
+}
 
 .container-top {
   height: 87vh;
